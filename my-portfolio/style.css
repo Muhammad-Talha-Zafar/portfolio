@@ -1,0 +1,579 @@
+/* 
+    ============================================================
+    STYLE.CSS - MUHAMMAD TALHA ZAFAR PORTFOLIO
+    Theme: Industrial Robotics & Autonomous Systems
+    Designed for: Mechanical Engineering Professionalism
+    ============================================================
+*/
+
+/* 1. ROOT VARIABLES & DESIGN SYSTEM */
+:root {
+    /* Color Palette - Robotics Cyan & Deep Logic Purple */
+    --primary: #00d4ff;         
+    --primary-glow: rgba(0, 212, 255, 0.35);
+    --secondary: #7000ff;       
+    --accent: #ff0055;
+    
+    /* Surface Colors */
+    --bg-deep: #05070a;         /* Space Black */
+    --bg-surface: #0a0f16;      /* Deep Navy Grey */
+    --bg-glass: rgba(255, 255, 255, 0.03);
+    --bg-card: rgba(15, 20, 25, 0.8);
+    
+    /* Text Colors */
+    --text-high: #f0f4f8;       /* Headings */
+    --text-mid: #94a3b8;        /* Body */
+    --text-low: #64748b;        /* Muted */
+    
+    /* UI Borders & Accents */
+    --border: rgba(255, 255, 255, 0.08);
+    --border-bright: rgba(0, 212, 255, 0.2);
+    
+    /* Transitions & Shadows */
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px var(--primary-glow);
+    
+    /* Layout */
+    --section-pad: 100px;
+    --container-width: 1200px;
+}
+
+/* 2. BASE RESET & GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-deep);
+    color: var(--text-mid);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    /* Engineering Blueprint Grid Effect */
+    background-image: 
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { 
+    background: #1e293b; 
+    border-radius: 10px; 
+}
+::-webkit-scrollbar-thumb:hover { background: var(--primary); }
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: var(--text-high);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul { list-style: none; }
+
+img { max-width: 100%; height: auto; display: block; }
+
+
+/* 3. LAYOUT UTILITIES */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--primary);
+    color: var(--bg-deep);
+    padding: 10px 20px;
+    z-index: 9999;
+    font-weight: bold;
+}
+.skip-link:focus { top: 20px; }
+
+/* 4. HEADER & NAVIGATION */
+#site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(5, 7, 10, 0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-area svg {
+    color: var(--primary);
+    filter: drop-shadow(0 0 5px var(--primary-glow));
+}
+
+.site-title h1 {
+    font-size: 1.1rem;
+    letter-spacing: -0.5px;
+}
+
+.site-title p {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: var(--text-low);
+    letter-spacing: 1.5px;
+}
+
+#main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+#main-nav a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-mid);
+}
+
+/* Updated active class to force blue */
+#main-nav a:hover, 
+#main-nav a.nav-active {
+    color: var(--primary) !important;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* 5. HERO SECTION */
+#hero {
+    min-height: 80vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 10% 40px; 
+    position: relative;
+}
+
+/* Ambient Background Lights */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 20%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw; height: 60vh;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#hero h2 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    margin-bottom: 24px;
+    background: linear-gradient(to right, #ffffff, var(--primary));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--primary); 
+}
+
+/* TAGLINE CENTERED FIX */
+.tagline {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px auto; /* Centered with margin auto */
+    text-align: center;
+}
+
+.profile-container figure {
+    margin-bottom: 50px;
+}
+
+.profile-container img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 4px solid var(--bg-surface);
+    outline: 1px solid var(--primary);
+    margin: 0 auto;
+    object-fit: cover;
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Button Component */
+.button-primary, .button-secondary {
+    padding: 12px 32px;
+    border-radius: 4px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: var(--primary);
+    color: var(--bg-deep);
+    border: none;
+}
+
+.button-primary:hover {
+    background: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px var(--primary-glow);
+}
+
+.button-secondary {
+    background: transparent;
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    display: inline-flex;  
+    align-items: center;   
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.button-secondary:hover {
+    background: rgba(0, 212, 255, 0.1); 
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--primary-glow);
+}
+
+.button-secondary svg {
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+/* 6. CONTENT SECTIONS GLOBAL */
+section {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 40px 5%; 
+}
+
+section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    display: block;      
+}
+
+
+/* 7. DISCIPLINE GRID */
+.discipline-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.discipline-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    padding: 50px 40px;
+    border-radius: 12px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.discipline-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+    background: rgba(15, 20, 25, 0.95);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.8);
+}
+
+.discipline-item .icon {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.discipline-item h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.discipline-item ul {
+    margin: 25px 0;
+}
+
+.discipline-item ul li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.discipline-item ul li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 10px;
+    width: 6px; height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+}
+
+.discipline-item a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--text-high);
+}
+
+/* 8. TECHNICAL TABLE */
+#tech-stack table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--bg-glass);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--primary);
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+tr:hover td {
+    background: rgba(0, 212, 255, 0.02);
+}
+
+/* 9. EDUCATION */
+#education article {
+    border-left: 2px solid var(--primary);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+#education h3 { font-size: 1.6rem; }
+
+/* 10. CONTACT WRAPPER */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    background: var(--bg-surface);
+    padding: 60px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+}
+
+.contact-info h3 { margin-bottom: 25px; color: var(--primary); }
+
+address p {
+    margin-bottom: 15px;
+    font-style: normal;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.field { display: flex; flex-direction: column; gap: 8px; }
+
+.field label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-high);
+}
+
+input, select, textarea {
+    background: var(--bg-deep);
+    border: 1px solid var(--border);
+    padding: 15px;
+    color: #fff;
+    border-radius: 6px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+.form-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button[type="submit"] {
+    background: var(--primary);
+    border: none;
+    padding: 15px 30px;
+    font-weight: 700;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="reset"] {
+    background: transparent;
+    color: var(--text-low);
+    border: none;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+/* 11. FOOTER */
+#site-footer {
+    background: #020305;
+    padding: 80px 10% 40px;
+    border-top: 1px solid var(--border);
+    margin-top: 100px;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-branding p:first-child {
+    font-size: 1.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.footer-nav h4, .social-nav h4 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.footer-nav ul li, .social-nav ul li {
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.footer-nav a:hover, .social-nav a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    font-size: 0.8rem;
+    color: var(--text-low);
+}
+
+/* 12. RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px;
+    }
+    
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-nav {
+        display: none; 
+    }
+    
+    #hero h2 {
+        font-size: 2.8rem;
+    }
+    
+    section {
+        padding: 60px 5%;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button-primary, .button-secondary {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 13. ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+main > section {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Special Text Effect */
+strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Styling for the CV button in the Nav Bar */
+.cv-link {
+    background: var(--primary);
+    color: #000 !important; 
+    padding: 8px 18px;
+    border-radius: 5px;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.cv-link:hover {
+    background: #ffffff;
+    box-shadow: 0 0 15px var(--primary-glow);
+    transform: translateY(-2px);
+}

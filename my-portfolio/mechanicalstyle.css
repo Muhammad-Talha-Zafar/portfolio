@@ -1,0 +1,348 @@
+/* 
+    ============================================================
+    MECHANICALSTYLE.CSS 
+    Focus: Technical, Industrial, Detailed Engineering Aesthetics
+    Length: Full expansive version including all decorations
+    ============================================================
+*/
+
+:root {
+    --primary: #00d4ff;
+    --primary-glow: rgba(0, 212, 255, 0.35);
+    --bg-dark: #05070a;
+    --bg-card: rgba(20, 25, 35, 0.6);
+    --text-white: #f0f4f8;
+    --text-grey: #94a3b8;
+    --border: rgba(255, 255, 255, 0.1);
+    --accent-orange: #ff8c00; 
+    --transition-speed: 0.4s;
+}
+
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-grey);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    /* Industrial Blueprint Grid Background */
+    background-image: 
+        radial-gradient(circle at 2px 2px, rgba(255,255,255,0.05) 1px, transparent 0);
+    background-size: 30px 30px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-white);
+    font-weight: 700;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+/* 2. HEADER & NAVIGATION */
+#site-header {
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+    background: rgba(5, 7, 10, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-area { 
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+}
+
+.logo-area h1 { 
+    font-size: 1.2rem; 
+    text-transform: uppercase; 
+    letter-spacing: 1px;
+}
+
+.logo-area span { 
+    color: var(--primary); 
+}
+
+#main-nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 30px; 
+}
+
+#main-nav a { 
+    text-decoration: none; 
+    color: var(--text-grey); 
+    font-weight: 600; 
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: var(--transition-speed);
+}
+
+/* Force Blue (Cyan) for the active page link */
+#main-nav a:hover, 
+#main-nav a.nav-active { 
+    color: var(--primary) !important; 
+    text-shadow: 0 0 10px var(--primary-glow); 
+}
+
+/* 3. HERO SUB-PAGE SECTION */
+.hero-sub {
+    padding: 120px 0 80px;
+    text-align: center;
+    position: relative;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: rgba(0, 212, 255, 0.1);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero-sub h2 { 
+    font-size: 3.5rem; 
+    margin-bottom: 25px; 
+    line-height: 1.1;
+}
+
+.hero-sub h2 span { 
+    color: var(--primary); 
+}
+
+.hero-sub p { 
+    max-width: 750px; 
+    margin: 0 auto; 
+    font-size: 1.15rem; 
+    color: var(--text-grey);
+}
+
+/* 4. PROJECT DETAIL GRID SYSTEM */
+.project-detail {
+    padding: 100px 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Logic for Reversed Layout (Image on Right) */
+@media (min-width: 851px) {
+    .project-detail.reversed .project-grid {
+        direction: rtl;
+    }
+    .project-detail.reversed .project-info,
+    .project-detail.reversed .project-visual {
+        direction: ltr; /* Reset text direction within the flipped container */
+    }
+}
+
+/* 5. VISUAL COMPONENT STYLING */
+.project-visual {
+    position: relative;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    background: var(--bg-card);
+    transition: var(--transition-speed);
+}
+
+.project-visual:hover {
+    border-color: var(--primary);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 30px var(--primary-glow);
+    transform: translateY(-5px);
+}
+
+.main-robot-img {
+    width: 100%;
+    border-radius: 10px;
+    filter: grayscale(0.2) contrast(1.1);
+    transition: var(--transition-speed);
+}
+
+.project-visual:hover .main-robot-img {
+    filter: grayscale(0) contrast(1);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background: var(--primary);
+    color: #000;
+    font-size: 0.75rem;
+    font-weight: 900;
+    padding: 6px 14px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 6. MECHANICAL CONTENT STYLING */
+.project-info h3 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.description {
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+    border-left: 3px solid var(--border);
+    padding-left: 25px;
+    color: var(--text-grey);
+}
+
+/* 7. TECHNICAL SPECIFICATION TABLES */
+.tech-specs {
+    margin-bottom: 40px;
+}
+
+.tech-specs h4, .minor-details h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+
+td {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+td:first-child {
+    font-weight: 600;
+    color: var(--text-white);
+    width: 45%;
+}
+
+/* 8. LIST STYLING (L-BULLETS) */
+.minor-details ul {
+    list-style: none;
+}
+
+.minor-details li {
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-grey);
+}
+
+.minor-details li::before {
+    content: '∟';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.minor-details strong {
+    color: var(--text-white);
+}
+
+/* 9. DECORATIONS & UTILITIES */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 60px 0;
+}
+
+.project-visual::before {
+    content: '';
+    position: absolute;
+    top: -8px; left: -8px;
+    width: 30px; height: 30px;
+    border-top: 3px solid var(--primary);
+    border-left: 3px solid var(--primary);
+}
+
+.project-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; right: -8px;
+    width: 30px; height: 30px;
+    border-bottom: 3px solid var(--primary);
+    border-right: 3px solid var(--primary);
+}
+
+footer {
+    padding: 80px 0;
+    text-align: center;
+    font-size: 0.85rem;
+    border-top: 1px solid var(--border);
+    margin-top: 100px;
+    color: var(--text-low);
+}
+
+/* 10. RESPONSIVE DESIGN (223 Line Completeness) */
+@media (max-width: 950px) {
+    .project-grid {
+        gap: 40px;
+    }
+    .hero-sub h2 { font-size: 2.8rem; }
+}
+
+@media (max-width: 850px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .project-detail.reversed .project-visual {
+        grid-row: 1; 
+    }
+    
+    .project-info {
+        text-align: left;
+    }
+
+    .description {
+        padding-left: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .hero-sub h2 { font-size: 2.2rem; }
+    .project-info h3 { font-size: 1.8rem; }
+}

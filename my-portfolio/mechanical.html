@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechanical Engineering | Talha Zafar</title>
+    <link rel="stylesheet" href="mechanicalstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header id="site-header">
+    <div class="logo-area">
+        <svg width="40" height="40" viewBox="0 0 100 100">
+            <polygon points="50,5 95,25 95,75 50,95 5,75 5,25" fill="none" stroke="#00d4ff" stroke-width="4"/>
+            <path d="M30 35 H70 M50 35 V75" stroke="#00d4ff" stroke-width="8" stroke-linecap="round"/>
+        </svg>
+        <div class="site-title">
+            <h1>Talha <span>Zafar</span></h1>
+        </div>
+    </div>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="programming.html">Software</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero-sub">
+        <div class="container">
+            <div class="badge">Hardware Portfolio</div>
+            <h2>Mechanical Design & <span>Kinematics</span></h2>
+            <p>From conceptual sketching and CAD modeling to structural analysis and final physical assembly. I focus on precision tolerances, material optimization, and high-torque actuation systems.</p>
+        </div>
+    </section>
+
+    <section class="project-detail">
+        <div class="container project-grid">
+            <div class="project-visual">
+                <img src="robot1.jpg" alt="Autonomous Mobile Robot" class="main-robot-img">
+                <div class="image-overlay">PROTOTYPE V1.2</div>
+            </div>
+            <div class="project-info">
+                <h3>01. Autonomous Mobile Base (AMR)</h3>
+                <p class="description">A 4-wheeled differential drive system designed for indoor navigation. Focus was placed on chassis rigidity and vibration dampening for sensitive LIDAR sensors.</p>
+                
+                <div class="tech-specs">
+                    <h4>Technical Specifications</h4>
+                    <table>
+                        <tr><td>Drive System</td><td>Differential Drive / Omni-wheels</td></tr>
+                        <tr><td>Chassis Material</td><td>Aluminum 6061-T6 / Acrylic Pannels</td></tr>
+                        <tr><td>Payload Capacity</td><td>15kg (Tested)</td></tr>
+                        <tr><td>Ground Clearance</td><td>45mm</td></tr>
+                    </table>
+                </div>
+
+                <div class="minor-details">
+                    <h4>Minor Engineering Details</h4>
+                    <ul>
+                        <li><strong>Tolerances:</strong> Machined motor mounts to +/- 0.05mm precision.</li>
+                        <li><strong>Fasteners:</strong> Utilized M3 socket head cap screws with Loctite 242 for vibration resistance.</li>
+                        <li><strong>Weight Dist:</strong> Battery placed at geometric center to optimize center of mass for high-speed turns.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="project-detail reversed">
+        <div class="container project-grid">
+            <div class="project-info">
+                <h3>02. 6-DOF Industrial Manipulator</h3>
+                <p class="description">An articulated robotic arm designed for pick-and-place automation. This project involved complex linkage design and inverse kinematics calculations.</p>
+                
+                <div class="tech-specs">
+                    <h4>Actuation & Torque</h4>
+                    <table>
+                        <tr><td>Joint 1-3</td><td>High-Torque Planetary Gear Steppers</td></tr>
+                        <tr><td>Reduction Ratio</td><td>50:1 Cycloidal Gearbox</td></tr>
+                        <tr><td>Reach Radius</td><td>650mm</td></tr>
+                        <tr><td>End Effector</td><td>Interchangeable Vacuum/Servo Gripper</td></tr>
+                    </table>
+                </div>
+
+                <div class="minor-details">
+                    <h4>Structural Analysis</h4>
+                    <ul>
+                        <li><strong>FEA Testing:</strong> Conducted stress analysis on elbow joint to ensure Safety Factor of 2.5.</li>
+                        <li><strong>Bearings:</strong> Dual-row ball bearings used at base to handle high axial and radial loads.</li>
+                        <li><strong>Wire Mgmt:</strong> Internal cable routing channels integrated into the 3D-printed arm segments.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="project-visual">
+                <img src="robot2.jpeg" alt="Robotic Arm Manipulator" class="main-robot-img">
+            </div>
+        </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <section class="project-detail">
+        <div class="container project-grid">
+            <div class="project-visual">
+                <img src="robot3.jpg" alt="Quadruped or Specialized Robot" class="main-robot-img">
+            </div>
+            <div class="project-info">
+                <h3>03. Bio-Inspired Legged System</h3>
+                <p class="description">A quadruped robot focusing on dynamic stability and leg linkage optimization. Modeled extensively in SolidWorks before fabrication.</p>
+                
+                <div class="tech-specs">
+                    <h4>Fabrication Details</h4>
+                    <table>
+                        <tr><td>Leg Material</td><td>Carbon Fiber Infused Nylon (PA12-CF)</td></tr>
+                        <tr><td>Joint Type</td><td>Direct Drive Actuators</td></tr>
+                        <tr><td>Total Weight</td><td>4.2kg</td></tr>
+                        <tr><td>Shock Absorb</td><td>Integrated TPU Spring Dampeners</td></tr>
+                    </table>
+                </div>
+
+                <div class="minor-details">
+                    <h4>Mechanism Logic</h4>
+                    <ul>
+                        <li><strong>Hinges:</strong> Needle roller bearings used for minimal friction in high-frequency gait cycles.</li>
+                        <li><strong>Sensing:</strong> Hall-effect encoders integrated directly into joint housings for real-time feedback.</li>
+                        <li><strong>Heat Sink:</strong> Custom aluminum plates for motor drivers to dissipate heat during peak load.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Muhammad Talha Zafar • Mechanical Engineering Dept • NUST Islamabad</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

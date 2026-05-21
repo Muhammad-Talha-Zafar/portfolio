@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering | Talha Zafar</title>
+    <link rel="stylesheet" href="programmingstyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header id="site-header">
+    <div class="logo-area">
+        <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#00d4ff" stroke-width="2">
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+        <div class="site-title">
+            <h1>Talha <span>Zafar</span></h1>
+        </div>
+    </div>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="mechanical.html">Mechanical</a></li>
+            <li><a href="programming.html">Software</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="code-hero">
+        <div class="container">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">bash — talhazafar@nust</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="prompt">$</span> sudo apt install autonomous-logic</p>
+                    <h1>Autonomous <span>Software</span> & Robotics Intelligence</h1>
+                    <p class="hero-desc">Specializing in high-level middleware (ROS 2), real-time control loops, and Python-driven industrial automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Core Software Services</h2>
+            <div class="service-grid">
+                
+                <div class="service-card">
+                    <div class="code-icon">01</div>
+                    <h3>ROS 2 Middleware</h3>
+                    <p>Developing robust nodes, custom messages, and service-client architectures using ROS 2 Humble. Expertise in URDF modeling and Gazebo simulations.</p>
+                    <div class="stack-tags">
+                        <span>Pub/Sub</span><span>ActionLib</span><span>Navigation2</span>
+                    </div>
+                </div>
+
+                <div class="service-card active-card">
+                    <div class="code-icon">02</div>
+                    <h3>Python Automation</h3>
+                    <p>Writing scalable scripts for data processing, system monitoring, and hardware communication protocols (Modbus, Serial, CAN).</p>
+                    <div class="stack-tags">
+                        <span>NumPy</span><span>OpenCV</span><span>Socket Programming</span>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="code-icon">03</div>
+                    <h3>Embedded C++</h3>
+                    <p>Firmware development for ESP32 and STM32. Implementation of PID control loops, sensor fusion (IMU/Odom), and Micro-ROS for hardware-to-PC bridging.</p>
+                    <div class="stack-tags">
+                        <span>FreeRTOS</span><span>HAL</span><span>Low-Level Drivers</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="code-snippet-section">
+        <div class="container">
+            <div class="snippet-box">
+                <div class="snippet-text">
+                    <h2>Modular Node Architecture</h2>
+                    <p>I prioritize clean, object-oriented code in ROS 2 to ensure robots are easily maintainable and scalable.</p>
+                    <a href="https://github.com/Muhammad-Talha-Zafar" target="_blank" class="github-btn">View on GitHub</a>
+                </div>
+                <div class="code-display">
+<pre>
+<span class="keyword">class</span> <span class="class-name">RoboController</span>(Node):
+    <span class="keyword">def</span> <span class="func">__init__</span>(self):
+        super().<span class="func">__init__</span>(<span class="string">'driver'</span>)
+        self.pub = self.<span class="func">create_pub</span>(Twist, <span class="string">'cmd_vel'</span>)
+        
+    <span class="keyword">def</span> <span class="func">send_velocity</span>(self, x, z):
+        msg = <span class="func">Twist</span>()
+        msg.linear.x = x
+        msg.angular.z = z
+        self.pub.<span class="func">publish</span>(msg)</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Muhammad Talha Zafar • Robotics Software Specialist</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
