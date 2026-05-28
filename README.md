@@ -3,7 +3,7 @@
 
 This repository contains the source code for my professional portfolio. I am a Mechanical Engineering student at NUST Islamabad, specializing in the integration of high-performance mechanical systems with intelligent software.
 
-🔗 **Live Demo:** [portfolio-silk-xi-50ssfmf9uh.vercel.app](https://portfolio-silk-xi-50ssfmf9uh.vercel.app/)
+🔗 **Live Demo:** [muhammad-talha-zafar-portfolio.vercel.app/](https://muhammad-talha-zafar-portfolio.vercel.app/)
 
 ---
 
